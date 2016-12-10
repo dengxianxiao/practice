@@ -17,9 +17,9 @@
     			a.book_id,
     			a.student_id,
     			a.appoint_time,
-    			b.book_id  "book.book_id",
-    			b.'name'  "book.name",
-    			b.number  "book.number"
+    			b.book_id "book.book_id",
+    			b.name "book.name",
+    			b.number "book.number"
     		from 
     			appointment a
     		inner join book b on a.book_id = b.book_id

@@ -33,6 +33,7 @@
 			set 
 				number = number - 1
 			where 
-				book_id = #{bookId};
+				book_id = #{bookId}
+			and number > 0;
 		</update>    
     </mapper>
