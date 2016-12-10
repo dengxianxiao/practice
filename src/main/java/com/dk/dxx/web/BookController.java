@@ -22,7 +22,13 @@ import com.dk.dxx.service.BookService;
 @RequestMapping("/book") // url:/模块/资源/{id}/细分 /seckill/list
 public class BookController {
 	
-//	private Logger logger = Logger.getLogger(this.getClass());
+	@RequestMapping(value = "/hello", method = RequestMethod.GET, produces = {
+	"application/json;charset=utf-8" })
+	public String printHello(Model model) {
+		model.addAttribute("message", "你好");
+		return "hello";
+	}
+	
 	
 	@Autowired
 	private BookService bookService;
@@ -62,7 +68,7 @@ public class BookController {
 			return "forward:/book/list";
 		}
 		
-		model.addAttribute("book", book);
+		model.addAttribute("detail", book);
 		return "detail";
 	}
 	
@@ -74,8 +80,8 @@ public class BookController {
 	 * @param studentId
 	 * @return
 	 */
-	@RequestMapping(value = "/{bookId}/appoint", method = RequestMethod.POST, 
-			produces = {"application/json, charset = utf8"})
+	@RequestMapping(value = "/{bookId}/appoint", method = RequestMethod.POST, produces = {
+    	"application/json;charset=utf-8" })
 	private Result<AppointExecution> appoint(@PathVariable("bookId") Long bookId, @Param("studentId") Long studentId) {
 		if (null == studentId || studentId.equals("")) {
 			return new Result<AppointExecution>(false, "学号不能为空！");
@@ -83,4 +89,8 @@ public class BookController {
 		AppointExecution execution = bookService.appointBook(bookId, studentId);
 		return new Result<AppointExecution>(true, execution);
 	}
+	
+	
+	
+	
 }
