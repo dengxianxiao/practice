@@ -3,6 +3,7 @@ package com.dk.dxx.dao;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.dk.dxx.BaseTest;
 import com.dk.dxx.entity.Appointment;
 
 /**
@@ -11,7 +12,7 @@ import com.dk.dxx.entity.Appointment;
  * @author dxx
  *
  */
-public class AppointmentDaoTest  {
+public class AppointmentDaoTest extends BaseTest {
 
 	@Autowired
 	private AppointmentDao appointmentDao;

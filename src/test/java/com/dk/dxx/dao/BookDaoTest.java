@@ -9,6 +9,7 @@ import java.util.List;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.dk.dxx.BaseTest;
 import com.dk.dxx.entity.Book;
 
 /**
@@ -16,7 +17,7 @@ import com.dk.dxx.entity.Book;
  * @author dxx
  *
  */
-public class BookDaoTest  {
+public class BookDaoTest extends BaseTest {
 	
 	@Autowired
 	private BookDao bookDao;
@@ -53,7 +54,6 @@ public class BookDaoTest  {
 	}
 	
 	public static void main(String[] args) {
-        // TODO 鑷姩鐢熸垚鐨勬柟娉曞瓨鏍�
         try{
             Class.forName("com.mysql.jdbc.Driver");
             Connection cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/practice?useUnicode=true&characterEncoding=utf8","root","123456");
