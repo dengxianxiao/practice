@@ -9,21 +9,20 @@ import java.util.List;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.dk.dxx.BaseTest;
 import com.dk.dxx.entity.Book;
 
 /**
- * BookDao测试用例
+ * BookDao娴嬭瘯鐢ㄤ緥
  * @author dxx
  *
  */
-public class BookDaoTest extends BaseTest {
+public class BookDaoTest  {
 	
 	@Autowired
 	private BookDao bookDao;
 	
 	/**
-	 * 测试queryById方法
+	 * 娴嬭瘯queryById鏂规硶
 	 */
 	@Test
 	public void testQueryById() {
@@ -33,7 +32,7 @@ public class BookDaoTest extends BaseTest {
 	}
 	
 	/**
-	 * 测试queryAll方法
+	 * 娴嬭瘯queryAll鏂规硶
 	 */
 	@Test
 	public void testQueryAll() {
@@ -44,7 +43,7 @@ public class BookDaoTest extends BaseTest {
 	}
 	
 	/**
-	 * 测试reduceNumber方法
+	 * 娴嬭瘯reduceNumber鏂规硶
 	 */
 	@Test
 	public void testReduceNumber() {
@@ -54,7 +53,7 @@ public class BookDaoTest extends BaseTest {
 	}
 	
 	public static void main(String[] args) {
-        // TODO 自动生成的方法存根
+        // TODO 鑷姩鐢熸垚鐨勬柟娉曞瓨鏍�
         try{
             Class.forName("com.mysql.jdbc.Driver");
             Connection cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/practice?useUnicode=true&characterEncoding=utf8","root","123456");

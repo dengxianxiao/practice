@@ -3,22 +3,21 @@ package com.dk.dxx.dao;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.dk.dxx.BaseTest;
 import com.dk.dxx.entity.Appointment;
 
 /**
- * AppointmentDao测试用例
+ * AppointmentDao娴嬭瘯鐢ㄤ緥
  * 
  * @author dxx
  *
  */
-public class AppointmentDaoTest extends BaseTest {
+public class AppointmentDaoTest  {
 
 	@Autowired
 	private AppointmentDao appointmentDao;
 	
 	/**
-	 * 测试插入appointment表操作
+	 * 娴嬭瘯鎻掑叆appointment琛ㄦ搷浣�
 	 */
 	@Test
 	public void testInsertAppointment() {
@@ -29,7 +28,7 @@ public class AppointmentDaoTest extends BaseTest {
 	}
 	
 	/**
-	 * 测试appointment表查询操作
+	 * 娴嬭瘯appointment琛ㄦ煡璇㈡搷浣�
 	 */
 	@Test
 	public void testQueryByKeyWithBook() {

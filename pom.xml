@@ -41,11 +41,20 @@
     </dependency>
     
     <!-- 数据库 -->
-    <dependency>
-    	<groupId>mysql</groupId>
-    	<artifactId>mysql-connector-java</artifactId>
-    	<version>5.1.37</version>
-    </dependency>
+    <!--  jdbc驱动包 -->
+	<dependency>
+	    <groupId>mysql</groupId>
+	    <artifactId>mysql-connector-java</artifactId>
+	    <version>5.1.30</version>
+	</dependency>
+	
+	<!-- 添加阿里巴巴连接池Druid支持 -->
+	<dependency>
+	    <groupId>com.alibaba</groupId>
+	    <artifactId>druid</artifactId>
+	    <version>1.0.16</version>
+	</dependency>
+    
     <dependency>
     	<groupId>c3p0</groupId>
     	<artifactId>c3p0</artifactId>
@@ -54,15 +63,15 @@
     
     <!-- dao:mybatis -->
     <dependency>
-    	<groupId>org.mybatis</groupId>
-    	<artifactId>mybatis</artifactId>
-    	<version>3.3.0</version>
-    </dependency>
-    <dependency>
-    	<groupId>org.mybatis</groupId>
-    	<artifactId>mybatis-spring</artifactId>
-    	<version>1.2.3</version>
-    </dependency>
+	    <groupId>org.mybatis</groupId>
+	    <artifactId>mybatis</artifactId>
+	    <version>3.4.0</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.mybatis</groupId>
+	    <artifactId>mybatis-spring</artifactId>
+	    <version>1.3.0</version>
+	</dependency>
     
     <!-- service:web -->
     <dependency>
@@ -90,51 +99,57 @@
     
     <!-- spring -->
     <dependency>
-    	<groupId>org.springframework</groupId>
-    	<artifactId>spring-core</artifactId>
-    	<version>4.1.7.RELEASE</version>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-core</artifactId>
+	    <version>4.3.0.RELEASE</version>
+	</dependency>
+  	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-beans</artifactId>
+	    <version>4.3.0.RELEASE</version>
+	</dependency>
+	<dependency>
+  		<groupId>org.springframework</groupId>
+  		<artifactId>spring-context</artifactId>
+  		<version>4.3.0.RELEASE</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.springframework</groupId>
+  		<artifactId>spring-context-support</artifactId>
+  		<version>4.3.0.RELEASE</version>
+  	</dependency>
+  	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-web</artifactId>
+		<version>4.3.0.RELEASE</version>
+	</dependency>
+  	
+  	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-webmvc</artifactId>
+		<version>4.3.0.RELEASE</version>
+	</dependency>
+	<dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-tx</artifactId>
+        <version>4.3.0.RELEASE</version>
     </dependency>
     <dependency>
-    	<groupId>org.springframework</groupId>
-    	<artifactId>spring-beans</artifactId>
-    	<version>4.1.7.RELEASE</version>
-    </dependency>
-    <dependency>
-    	<groupId>org.springframework</groupId>
-    	<artifactId>spring-context</artifactId>
-    	<version>4.1.7.RELEASE</version>
-    </dependency>
-    
-    <!-- spring-dao -->
-    <dependency>
-    	<groupId>org.springframework</groupId>
-    	<artifactId>spring-jdbc</artifactId>
-    	<version>4.1.7.RELEASE</version>
-    </dependency>
-    <dependency>
-    	<groupId>org.springframework</groupId>
-    	<artifactId>spring-tx</artifactId>
-    	<version>4.1.7.RELEASE</version>
-    </dependency>
-    
-    <!-- spring-web -->
-    <dependency>
-    	<groupId>org.springframework</groupId>
-    	<artifactId>spring-web</artifactId>
-    	<version>4.1.7.RELEASE</version>
-    </dependency>
-    <dependency>
-    	<groupId>org.springframework</groupId>
-    	<artifactId>spring-webmvc</artifactId>
-    	<version>4.1.7.RELEASE</version>
-    </dependency>
-    
-    <!-- spring-test -->
-    <dependency>
-    	<groupId>org.springframework</groupId>
-    	<artifactId>spring-test</artifactId>
-    	<version>4.1.7.RELEASE</version>
-    </dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-jdbc</artifactId>
+		<version>4.3.0.RELEASE</version>
+	</dependency>
+	<dependency>
+    <groupId>org.springframework</groupId>
+	    <artifactId>spring-aop</artifactId>
+	    <version>4.3.0.RELEASE</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-aspects</artifactId>
+	    <version>4.3.0.RELEASE</version>
+	</dependency>
+	
     
     <!-- redis客户端 -->
     <dependency>
@@ -153,12 +168,96 @@
     	<version>1.0.8</version>
     </dependency>
     
-    <!-- 集合工具类 -->
+    <!-- 添加Shiro支持 -->
+  	<dependency>
+	    <groupId>org.apache.shiro</groupId>
+	    <artifactId>shiro-core</artifactId>
+	    <version>1.2.5</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.apache.shiro</groupId>
+	    <artifactId>shiro-web</artifactId>
+	    <version>1.2.5</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.apache.shiro</groupId>
+	    <artifactId>shiro-spring</artifactId>
+	    <version>1.2.5</version>
+	</dependency>
+	
+	<!-- 添加lucene支持 -->
+  	<dependency>
+	    <groupId>org.apache.lucene</groupId>
+	    <artifactId>lucene-core</artifactId>
+	    <version>5.3.1</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.apache.lucene</groupId>
+	    <artifactId>lucene-queryparser</artifactId>
+	    <version>5.3.1</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.apache.lucene</groupId>
+	    <artifactId>lucene-analyzers-common</artifactId>
+	    <version>5.3.1</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.apache.lucene</groupId>
+	    <artifactId>lucene-highlighter</artifactId>
+	    <version>5.3.1</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.apache.lucene</groupId>
+	    <artifactId>lucene-analyzers-smartcn</artifactId>
+	    <version>5.3.1</version>
+	</dependency>
+    
+   <!-- apache共公包 -->
+	<dependency>
+		<groupId>commons-codec</groupId>
+		<artifactId>commons-codec</artifactId>
+		<version>1.10</version>
+	</dependency>	
+	<dependency>
+		<groupId>commons-lang</groupId>
+		<artifactId>commons-lang</artifactId>
+		<version>2.6</version>
+	</dependency>	
+	<dependency>
+		<groupId>commons-beanutils</groupId>
+		<artifactId>commons-beanutils</artifactId>
+		<version>1.8.3</version>
+	</dependency>	
+	<dependency>
+		<groupId>commons-collections</groupId>
+		<artifactId>commons-collections</artifactId>
+		<version>3.2.2</version>
+	</dependency>	
+	<dependency>
+		<groupId>commons-logging</groupId>
+		<artifactId>commons-logging</artifactId>
+		<version>1.2</version>
+	</dependency>	
+	<dependency>
+		<groupId>net.sf.ezmorph</groupId>
+		<artifactId>ezmorph</artifactId>
+		<version>1.0.6</version>
+	</dependency>
+	
+	<!-- 添加百度编辑器ueditor支持 -->
+	<!-- 还有几个maven仓库中没有，我放到lib下了 -->
+	<dependency>
+	    <groupId>commons-fileupload</groupId>
+	    <artifactId>commons-fileupload</artifactId>
+	    <version>1.3.2</version>
+	</dependency>
+	
+	<!-- 添加jsoup支持 -->
     <dependency>
-    	<groupId>commons-collections</groupId>
-    	<artifactId>commons-collections</artifactId>
-    	<version>3.2</version>
-    </dependency>
+	    <groupId>org.jsoup</groupId>
+	    <artifactId>jsoup</artifactId>
+	    <version>1.9.2</version>
+	</dependency>
     
   
     

@@ -1,4 +1,4 @@
-package com.dk.dxx.web;
+package com.dk.dxx.controller;
 
 import java.util.List;
 
@@ -19,13 +19,13 @@ import com.dk.dxx.service.BookService;
 
 
 @Controller
-@RequestMapping("/book") // url:/模块/资源/{id}/细分 /seckill/list
+@RequestMapping("/book") // url:/妯�?�?璧勬�?{id}/缁嗗�?/seckill/list
 public class BookController {
 	
 	@RequestMapping(value = "/hello", method = RequestMethod.GET, produces = {
 	"application/json;charset=utf-8" })
 	public String printHello(Model model) {
-		model.addAttribute("message", "你好");
+		model.addAttribute("message", "浣犲�?");
 		return "hello";
 	}
 	
@@ -35,7 +35,7 @@ public class BookController {
 	
 	
 	/**
-	 * 查询图书列表
+	 * 鏌ヨ鍥句功鍒楄�?
 	 * 
 	 * @param model
 	 * @return
@@ -50,7 +50,7 @@ public class BookController {
 	
 	
 	/**
-	 * 查询一本图书
+	 * 鏌ヨ涓�湰鍥句�?
 	 * 
 	 * @param bookId
 	 * @param model
@@ -74,7 +74,7 @@ public class BookController {
 	
 	
 	/**
-	 * 图书借阅
+	 * 鍥句功鍊熼槄
 	 * 
 	 * @param bookId
 	 * @param studentId
@@ -84,7 +84,7 @@ public class BookController {
     	"application/json;charset=utf-8" })
 	private Result<AppointExecution> appoint(@PathVariable("bookId") Long bookId, @Param("studentId") Long studentId) {
 		if (null == studentId || studentId.equals("")) {
-			return new Result<AppointExecution>(false, "学号不能为空！");
+			return new Result<AppointExecution>(false, "瀛﹀彿涓嶈兘涓虹┖锛�?");
 		}
 		AppointExecution execution = bookService.appointBook(bookId, studentId);
 		return new Result<AppointExecution>(true, execution);
