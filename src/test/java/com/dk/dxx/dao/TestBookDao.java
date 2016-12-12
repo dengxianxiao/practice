@@ -17,7 +17,7 @@ import com.dk.dxx.entity.Book;
  * @author dxx
  *
  */
-public class BookDaoTest extends BaseTest {
+public class TestBookDao extends BaseTest {
 	
 	@Autowired
 	private BookDao bookDao;

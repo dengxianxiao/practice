@@ -12,7 +12,7 @@ import com.dk.dxx.entity.Appointment;
  * @author dxx
  *
  */
-public class AppointmentDaoTest extends BaseTest {
+public class TestAppointmentDao extends BaseTest {
 
 	@Autowired
 	private AppointmentDao appointmentDao;

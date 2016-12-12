@@ -14,9 +14,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result property="imagename" column="imagename"/>
 	</resultMap>
 	
-	<insert id="addBlogger" parameterType="Blogger">
-		INSERT IGNORE INTO t_blogger (id, username, password, profile, nickname, sign, imagename)
-		VALUE (#{id}, #{username}, #{password}, #{profile}, #{nickname}, #{sign}, #{imagename})
+	<insert id="addBlogger" parameterType="Blogger" keyProperty="id" useGeneratedKeys="true">
+		INSERT IGNORE INTO t_blogger
+		VALUE (null, #{username}, #{password}, #{profile}, #{nickname}, #{sign}, #{imagename})
 	</insert>
 	
 	<select id="getByUsername" parameterType="String" resultMap="BloggerResult">
