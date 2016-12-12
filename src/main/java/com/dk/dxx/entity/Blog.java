@@ -7,13 +7,13 @@ import java.util.List;
 
 public class Blog {
 
-	private Integer id;
-	private String title;
-	private String summary;
-	private Date releaseDate;
-	private Integer clickHit;
-	private Integer replyHit;
-	private String content;
+	private Long id;
+	private String title; //标题
+	private String summary; //摘要
+	private Date releaseDate; //添加时间
+	private Integer clickHit; //点击次数
+	private Integer replyHit; //回复次数
+	private String content; //内容
 	private String contentNoTag; //不带标签的博客内容，用于Lucene索引中
 	private String keyWord; //关键字，用空格隔开
 	
@@ -23,11 +23,11 @@ public class Blog {
 	
 	private List<String> imageList = new LinkedList<String>();//博客里存的图片，主要用于展示缩略图
 
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

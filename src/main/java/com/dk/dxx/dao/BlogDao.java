@@ -12,14 +12,39 @@ import com.dk.dxx.entity.Blog;
  *
  */
 public interface BlogDao {
+	
+	
+	/**
+	 * 添加博客
+	 * 
+	 * @param blog
+	 * @return
+	 */
+	Integer addBlog(Blog blog);
+	
+	/**
+	 * 根据ID删除博客
+	 * 
+	 * @param id
+	 * @return
+	 */
+	Integer deleteBlog(Long id);
+	
+	/**
+	 * 更新博客信息
+	 * 
+	 * @param blog
+	 * @return
+	 */
+	Integer updateBlog(Blog blog);
 
 
 	/**
-	 * 获取博客列表，根据日期月份分组查询
+	 * 获取博客主要数据，根据日期月份分组查询
 	 * 
 	 * @return
 	 */
-	List<Blog> queryBlogList();
+	List<Blog> queryBlogInfo();
 	
 	/**
 	 * 分页查询博客列表
@@ -43,15 +68,9 @@ public interface BlogDao {
 	 * @param id
 	 * @return
 	 */
-	Blog getBlogById(Integer id);
+	Blog getBlogById(Long id);
 
-	/**
-	 * 更新博客信息
-	 * 
-	 * @param blog
-	 * @return
-	 */
-	Integer updateBlogInfo(Blog blog);
+	
 
 	/**
 	 * 获取上一篇博客
@@ -59,7 +78,7 @@ public interface BlogDao {
 	 * @param id
 	 * @return
 	 */
-	public Blog getPreviousBlog(Integer id);
+	Blog getPreviousBlog(Long id);
 
 	/**
 	 * 获取下一篇博客
@@ -67,30 +86,16 @@ public interface BlogDao {
 	 * @param id
 	 * @return
 	 */
-	Blog getNextBlog(Integer id);
+	Blog getNextBlog(Long id);
 	
-	/**
-	 * 添加博客
-	 * 
-	 * @param blog
-	 * @return
-	 */
-	Integer addBlog(Blog blog);
 	
-	/**
-	 * 根据ID删除博客
-	 * 
-	 * @param id
-	 * @return
-	 */
-	Integer deleteBlog(Integer id);
 	
 	/**
 	 * 根据博客类型的id查询该类型下的博客数量 
 	 * 
-	 * @param typeId
+	 * @param id
 	 * @return
 	 */
-	Integer getBlogByTypeId(Integer typeId);
+	Integer getBlogCountByTypeId(Long id);
 	
 }
