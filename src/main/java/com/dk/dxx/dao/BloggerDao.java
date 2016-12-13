@@ -29,7 +29,7 @@ public interface BloggerDao {
 	 * 查询博主信息
 	 * @return
 	 */
-	BloggerDao getBloggerData();
+	Blogger getBloggerData();
 	
 	/**
 	 * 更新博主信息

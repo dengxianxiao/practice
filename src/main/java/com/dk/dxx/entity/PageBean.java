@@ -8,35 +8,48 @@ package com.dk.dxx.entity;
  */
 public class PageBean {
 
-	private Integer id;
-	private String linkname; //链接名称
-	private String linkurl; //链接地址
-	private Integer orderNum; //链接排序的序号
+	private int page; // 第几页
+	private int pageSize; // 每页记录数
+	private int start;  // 起始页
 	
-	public Integer getId() {
-		return id;
+	
+	public PageBean(int page, int pageSize) {
+		super();
+		this.page = page;
+		this.pageSize = pageSize;
 	}
-	public void setId(Integer id) {
-		this.id = id;
+
+
+	public int getPage() {
+		return page;
 	}
-	public String getLinkname() {
-		return linkname;
+
+
+	public void setPage(int page) {
+		this.page = page;
 	}
-	public void setLinkname(String linkname) {
-		this.linkname = linkname;
+
+
+	public int getPageSize() {
+		return pageSize;
 	}
-	public String getLinkurl() {
-		return linkurl;
+
+
+	public void setPageSize(int pageSize) {
+		this.pageSize = pageSize;
 	}
-	public void setLinkurl(String linkurl) {
-		this.linkurl = linkurl;
+
+
+	public int getStart() {
+		return start;
 	}
-	public Integer getOrderNum() {
-		return orderNum;
+
+
+	public void setStart(int start) {
+		this.start = start;
 	}
-	public void setOrderNum(Integer orderNum) {
-		this.orderNum = orderNum;
-	}
+	
+	
 	
 	
 }
