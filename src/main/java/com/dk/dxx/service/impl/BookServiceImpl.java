@@ -15,7 +15,7 @@ import com.dk.dxx.entity.Book;
 import com.dk.dxx.enums.AppointStateEnum;
 import com.dk.dxx.service.BookService;
 
-//@Service
+@Service
 public class BookServiceImpl implements BookService {
 	
 	private Logger logger = Logger.getLogger(this.getClass());
@@ -68,4 +68,5 @@ public class BookServiceImpl implements BookService {
 		}
 	}
 
+	
 }

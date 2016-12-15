@@ -8,7 +8,7 @@ import com.dk.dxx.entity.Book;
 public interface BookService {
 	
 	/**
-	 * 查询一本图书
+	 * 鏌ヨ涓�湰鍥句功
 	 * 
 	 * @param bookId
 	 * @return
@@ -16,18 +16,20 @@ public interface BookService {
 	Book getById(Long bookId);
 	
 	/**
-	 * 查询所有图书
+	 * 鏌ヨ鎵�湁鍥句功
 	 * 
 	 * @return
 	 */
 	List<Book> queryBookList();
 
 	/**
-	 * 预约图书
+	 * 棰勭害鍥句功
 	 * 
 	 * @param bookId
 	 * @param studentId
 	 * @return
 	 */
 	AppointExecution appointBook(Long bookId, Long studentId);
+	
+	
 }

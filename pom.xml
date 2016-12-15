@@ -7,10 +7,20 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>practice Maven Webapp</name>
   <url>http://maven.apache.org</url>
+  <properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<spring.version>4.3.0.RELEASE</spring.version>
+	</properties>
   
-  
-  
+  	
   <dependencies>
+  	<!-- 任务调度 -->
+  	<dependency>
+			<groupId>org.quartz-scheduler</groupId>
+			<artifactId>quartz</artifactId>
+			<version>2.2.1</version>
+		</dependency>
+		
   	<!-- 单元测试 -->
     <dependency>
       <groupId>junit</groupId>
@@ -101,58 +111,58 @@
     <dependency>
 	    <groupId>org.springframework</groupId>
 	    <artifactId>spring-core</artifactId>
-	    <version>4.3.0.RELEASE</version>
+	    <version>${spring.version}</version>
 	</dependency>
   	<dependency>
 	    <groupId>org.springframework</groupId>
 	    <artifactId>spring-beans</artifactId>
-	    <version>4.3.0.RELEASE</version>
+	    <version>${spring.version}</version>
 	</dependency>
 	<dependency>
   		<groupId>org.springframework</groupId>
   		<artifactId>spring-context</artifactId>
-  		<version>4.3.0.RELEASE</version>
+  		<version>${spring.version}</version>
   	</dependency>
   	<dependency>
   		<groupId>org.springframework</groupId>
   		<artifactId>spring-context-support</artifactId>
-  		<version>4.3.0.RELEASE</version>
+  		<version>${spring.version}</version>
   	</dependency>
   	<dependency>
 		<groupId>org.springframework</groupId>
 		<artifactId>spring-web</artifactId>
-		<version>4.3.0.RELEASE</version>
+		<version>${spring.version}</version>
 	</dependency>
   	
   	<dependency>
 		<groupId>org.springframework</groupId>
 		<artifactId>spring-webmvc</artifactId>
-		<version>4.3.0.RELEASE</version>
+		<version>${spring.version}</version>
 	</dependency>
 	<dependency>
         <groupId>org.springframework</groupId>
         <artifactId>spring-tx</artifactId>
-        <version>4.3.0.RELEASE</version>
+        <version>${spring.version}</version>
     </dependency>
     <dependency>
 		<groupId>org.springframework</groupId>
 		<artifactId>spring-jdbc</artifactId>
-		<version>4.3.0.RELEASE</version>
+		<version>${spring.version}</version>
 	</dependency>
 	<dependency>
     <groupId>org.springframework</groupId>
 	    <artifactId>spring-aop</artifactId>
-	    <version>4.3.0.RELEASE</version>
+	    <version>${spring.version}</version>
 	</dependency>
 	<dependency>
 	    <groupId>org.springframework</groupId>
 	    <artifactId>spring-aspects</artifactId>
-	    <version>4.3.0.RELEASE</version>
+	    <version>${spring.version}</version>
 	</dependency>
 	<dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-test</artifactId>
-            <version>4.3.0.RELEASE</version>
+            <version>${spring.version}</version>
         </dependency>
 	
     

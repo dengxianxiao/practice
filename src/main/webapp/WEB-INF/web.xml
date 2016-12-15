@@ -14,7 +14,10 @@
   <!-- spring配置文件 -->
   <context-param>
   	<param-name>contextConfigLocation</param-name>
-  	<param-value>classpath:spring-context.xml</param-value>
+  	<!-- 如果要加载多个配置文件，用逗号隔开 -->
+  	<param-value>classpath:spring-context.xml
+		<!--	 ,classpath:test-spring-quartz.xml -->
+  		</param-value>
   </context-param>
   
     
