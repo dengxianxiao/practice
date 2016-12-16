@@ -1,23 +1,23 @@
 package com.dk.dxx.entity;
 
 /**
- * ÈÎÎñµ÷¶ÈquartzÊı¾İ¿â¶¯Ì¬ÅäÖÃ
+ * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½quartzï¿½ï¿½İ¿â¶¯Ì¬ï¿½ï¿½ï¿½ï¿½
  * 
  * @author dxx
  *
  */
 public class ScheduleJob {
 
-	 private String jobId; // ÈÎÎñ ID
-    private String jobName; // ÈÎÎñÃû³Æ
-    private String jobGroup; // ÈÎÎñ·Ö×é
-    private String cronExpression; // Ê±¼ä±í´ïÊ½
-    private String description; // ÈÎÎñÃèÊö
+	private String jobId; // ï¿½ï¿½ï¿½ï¿½ ID
+    private String jobName; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    private String jobGroup; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    private String cronExpression; // Ê±ï¿½ï¿½ï¿½ï¿½Ê½
+    private String description; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
-    private String targetObject; // Spring ×¢ÈëµÄÀàÃû
-    private String targetMethod; // ·½·¨
+    private String targetObject; // Spring ×¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    private String targetMethod; // ï¿½ï¿½ï¿½ï¿½
 
-    private int isCluster;// ÊÇ·ñ¼¯ÈºÔËĞĞ
+    private int isCluster;// ï¿½Ç·ï¿½Èºï¿½ï¿½ï¿½ï¿½
 
 	public String getJobId() {
 		return jobId;

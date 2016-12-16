@@ -4,7 +4,7 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans  
      http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
      
-     <bean id="applicationContextUtil" class="com.ixiaozhi.util.ApplicationContextUtil"/>
+     <bean id="applicationContextUtil" class="com.dk.dxx.utils.ApplicationContextUtil"/>
      
      <bean id="localQuartzScheduler" class="org.springframework.scheduling.quartz.SchedulerFactoryBean"></bean>
      
@@ -15,8 +15,13 @@
 	<!-- 启动时延期3秒开始任务 -->  
 	<property name="startupDelay" value="3"/>  
 	<!-- 保存Job数据到数据库所需的数据源 -->  
-	<property name="dataSource" ref="dataSource"/>  
+<!-- 	<property name="dataSource" ref="dataSource"/>   -->
 	<!-- Job接受applicationContext的成员变量名 -->  
 	<property name="applicationContextSchedulerContextKey" value="applicationContext"/>  
 	<property name="overwriteExistingJobs" value="true"/></bean> 
+	
+	
+	<!-- 工作的bean -->
+	<bean id="testInvokeImpl" class="com.dk.dxx.TestInvokeImpl" />
+	
 </beans>

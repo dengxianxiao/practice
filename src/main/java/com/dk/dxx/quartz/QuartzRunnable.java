@@ -1,16 +1,25 @@
 package com.dk.dxx.quartz;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import org.quartz.CronScheduleBuilder;
+import org.quartz.CronTrigger;
+import org.quartz.JobBuilder;
+import org.quartz.JobDataMap;
+import org.quartz.JobDetail;
+import org.quartz.Scheduler;
+import org.quartz.SchedulerException;
+import org.quartz.TriggerBuilder;
+import org.quartz.TriggerKey;
 import org.slf4j.Logger;
-import org.quartz.*;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
 
 import com.dk.dxx.entity.ScheduleJob;
 
 /**
- * ÈÎÎñÆô¶¯
+ * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
  * @author dxx
  *
  */
@@ -22,7 +31,7 @@ public class QuartzRunnable {
 
     /**
      * 
-     * ¹¹Ôìº¯Êý, ´«Èë applicationContext
+     * ï¿½ï¿½ï¿½ìº¯ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ applicationContext
      *
      * @param context
      */
@@ -32,15 +41,25 @@ public class QuartzRunnable {
 
     public void work() throws SchedulerException {
         logger.info("quartz is running ...");
-        // scheduler ¶ÔÏó
+        // scheduler ï¿½ï¿½ï¿½ï¿½
         Scheduler schedulerCluster = (Scheduler) context.getBean("clusterQuartzScheduler");
         Scheduler schedulerLocal = (Scheduler) context.getBean("localQuartzScheduler");
 
-        List<ScheduleJob> allQuartzJobs = null; // ´ÓÊý¾Ý¿â»òÕßÅäÖÃÎÄ¼þ»òÕßÆäËûÈÎºÎµØ·½È¡µÃ Quartz ÈÎÎñµÄÅäÖÃÎÄ¼þ£¬ ScheduleJob ¶ÔÏóÎª×Ô¶¨ÒåµÄ Quartz ÈÎÎñÉèÖÃ£¬¶ÔÏóµÄÊôÐÔ¼ûÏÂÎÄ
-
-        // Æô¶¯¶¨Ê±ÈÎÎñ
+        ScheduleJob sj = new ScheduleJob();
+        sj.setJobId("id");
+        sj.setJobName("name");
+        sj.setJobGroup("group");
+        sj.setIsCluster(1);
+        sj.setCronExpression("0/5 * * * * ?");
+        sj.setDescription("æµ‹è¯•ä»»åŠ¡");
+        sj.setTargetObject("testInvokeImpl");
+        sj.setTargetMethod("testInvoke");
+        List<ScheduleJob> allQuartzJobs = new ArrayList<ScheduleJob>(); // ï¿½ï¿½ï¿½ï¿½Ý¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÎºÎµØ·ï¿½È¡ï¿½ï¿½ Quartz ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ ScheduleJob ï¿½ï¿½ï¿½ï¿½Îªï¿½Ô¶ï¿½ï¿½ï¿½ï¿½ Quartz ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½ï¿½ï¿½ï¿½ï¿½
+        allQuartzJobs.add(sj);
+        
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½
         for (ScheduleJob job : allQuartzJobs) {
-            // Çø·Ö±¾»úÔËÐÐ»ò¼¯ÈºÔËÐÐ
+            // ï¿½ï¿½Ö±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð»ï¿½Èºï¿½ï¿½ï¿½ï¿½
             Scheduler scheduler;
             if (job.getIsCluster() == 1) {
                 scheduler = schedulerCluster;
@@ -50,24 +69,24 @@ public class QuartzRunnable {
 
             TriggerKey triggerKey = TriggerKey.triggerKey(job.getJobName(), job.getJobGroup());
             CronTrigger trigger = (CronTrigger) scheduler.getTrigger(triggerKey);
-            //²»´æÔÚ£¬´´½¨Ò»¸ö
+            //ï¿½ï¿½ï¿½ï¿½ï¿½Ú£ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½
             if (null == trigger) {
                 JobDetail jobDetail = JobBuilder.newJob(MyDetailQuartzJobBean.class).withIdentity(job.getJobName(), job.getJobGroup()).build();
                 JobDataMap dataMap = jobDetail.getJobDataMap();
-                dataMap.put("scheduleJob", job); // ´«µÝ job ¶ÔÏóÖÁÖ´ÐÐµÄ·½·¨Ìå
+                dataMap.put("scheduleJob", job); // ï¿½ï¿½ï¿½ï¿½ job ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ÐµÄ·ï¿½ï¿½ï¿½ï¿½ï¿½
 
-                //±í´ïÊ½µ÷¶È¹¹½¨Æ÷
+                //ï¿½ï¿½ï¿½Ê½ï¿½ï¿½ï¿½È¹ï¿½ï¿½ï¿½ï¿½ï¿½
                 CronScheduleBuilder scheduleBuilder = CronScheduleBuilder.cronSchedule(job.getCronExpression());
-                //°´ÐÂµÄcronExpression±í´ïÊ½¹¹½¨Ò»¸öÐÂµÄtrigger
+                //ï¿½ï¿½ï¿½Âµï¿½cronExpressionï¿½ï¿½ï¿½Ê½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Âµï¿½trigger
                 trigger = TriggerBuilder.newTrigger().withIdentity(job.getJobName(), job.getJobGroup()).withSchedule(scheduleBuilder).withDescription(job.getDescription()).build();
                 scheduler.scheduleJob(jobDetail, trigger);
             } else {
-                // TriggerÒÑ´æÔÚ£¬ÄÇÃ´¸üÐÂÏàÓ¦µÄ¶¨Ê±ÉèÖÃ
-                //±í´ïÊ½µ÷¶È¹¹½¨Æ÷
+                // Triggerï¿½Ñ´ï¿½ï¿½Ú£ï¿½ï¿½ï¿½Ã´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½Ä¶ï¿½Ê±ï¿½ï¿½ï¿½ï¿½
+                //ï¿½ï¿½ï¿½Ê½ï¿½ï¿½ï¿½È¹ï¿½ï¿½ï¿½ï¿½ï¿½
                 CronScheduleBuilder scheduleBuilder = CronScheduleBuilder.cronSchedule(job.getCronExpression());
-                //°´ÐÂµÄcronExpression±í´ïÊ½ÖØÐÂ¹¹½¨trigger
+                //ï¿½ï¿½ï¿½Âµï¿½cronExpressionï¿½ï¿½ï¿½Ê½ï¿½ï¿½ï¿½Â¹ï¿½ï¿½ï¿½trigger
                 trigger = trigger.getTriggerBuilder().withIdentity(triggerKey).withSchedule(scheduleBuilder).build();
-                //°´ÐÂµÄtriggerÖØÐÂÉèÖÃjobÖ´ÐÐ
+                //ï¿½ï¿½ï¿½Âµï¿½triggerï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½jobÖ´ï¿½ï¿½
                 scheduler.rescheduleJob(triggerKey, trigger);
             }
         }

@@ -1,5 +1,6 @@
 package com.dk.dxx.quartz;
 
+import org.quartz.SchedulerException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -13,19 +14,22 @@ public class TestQuartz {
 //		new ClassPathXmlApplicationContext("testSpring.xml");
 	}
 	
-	//ÈÎÎñµ÷¶È²âÊÔjunit²»ÐÐ£¬Ö»Ö´ÐÐÒ»´Î
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È²ï¿½ï¿½ï¿½junitï¿½ï¿½ï¿½Ð£ï¿½Ö»Ö´ï¿½ï¿½Ò»ï¿½ï¿½
 	public static void main(String[] args) {
 		
 		
-		System.out.println("hello world");
-		new ClassPathXmlApplicationContext("test-spring-quartz.xml");
+//		System.out.println("hello world");
+//		new ClassPathXmlApplicationContext("test-spring-quartz.xml");
 		
-		
-		 // ³õÊ¼»¯ Spring
-//        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("test-spring-schedulerJob.xml");
-//
-//        // Æô¶¯¶¨Ê±ÈÎÎñ
-//        QuartzRunnable quartz = new QuartzRunnable(applicationContext);
-//        quartz.work();
+		 // ï¿½ï¿½Ê¼ï¿½ï¿½ Spring
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("test-spring-schedulerJob.xml");
+
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½
+        QuartzRunnable quartz = new QuartzRunnable(applicationContext);
+        try {
+			quartz.work();
+		} catch (SchedulerException e) {
+			e.printStackTrace();
+		}
 	}
 }
