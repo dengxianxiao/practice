@@ -41,7 +41,54 @@
 		</tr>
 	</table>
 		
+	<form action="#" role="form">
+		<div class="form-group">
+			<label for="exampleInputEmail">Email address</label>
+			<input type="email" class="form-control" id="exampleInputEmail" placeholder="Entre email">
+		</div>
 		
+		<div class="form-group">
+			<label for="exampleInputPassword">Password</label>
+			<input type="password" class="form-control" id="exampleInputPassword" placeholder="Entre password">
+		</div>
+		
+		<div class="form-group">
+			<label for="exampleInputFile">File input</label>
+			<input type="file" id="exampleInputFile">
+		</div>
+		
+		<div class="form-group">
+			<label>
+				<input type="checkbox"> Check me out
+			</label>
+		</div>
+		
+		<button type="submit" class="btn btn-default">Submit</button>
+	</form>	
+	
+	<form action="#" role="form" class="form-inline">
+		<div class="form-group">
+			<label for="exampleInputEmail1" class="sr-only">Email address</label>
+			<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Entre email">
+		</div>
+		
+		<div class="form-group">
+			<div class="input-group">
+				<div class="input-group-addon">@</div>
+				<input class="form-control" type="email" placeholder="Enter email">
+			</div>
+		</div>
+			<div class="form-group">
+				<label class="sr-only" for="exampleInputPassword2">Password</label>
+				<input type="password" class="form-control"
+					id="exampleInputPassword2" placeholder="Password">
+			</div>
+			<div class="checkbox">
+				<label> <input type="checkbox"> Remember me
+				</label>
+			</div>
+			<button type="submit" class="btn btn-default">Sign in</button>
+		</form>
 		
 </div>
 
