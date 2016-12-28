@@ -23,31 +23,41 @@
 </style>
 </head>
 <body>
-<div class="contain-fluid">
-	
-	<table class="table table-responsive table-striped table-bordered table-hover">
-		<tr>
-			<td class="active">1</td>
-			<td class="success">2</td>
-			<td class="info">3</td>
-		</tr>
-		<tr>
-			<td class="warning">4</td>
-			<td class="danger">5</td>
-			<td class="active">6</td>
-		</tr>
-		<tr class="masthead">
-			<td>7</td>
-			<td>8</td>
-			<td>9</td>
-		</tr>
-	</table>
 
-		<div class="col-md-2">
-			<!-- Nav tabs -->
-			<ul class="nav nav-pills nav-stacked" role="tablist">
-				<li role="presentation" class="active"><a href="#home"
-					role="tab" data-toggle="tab">Home</a></li>
+<nav class="navbar navbar-default" role="navigation">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				
+			</button>
+		</div>
+	
+	</div>
+</nav>
+
+<div class="contain-fluid">
+
+	
+
+
+
+
+
+	
+		<div class="col-md-4">
+			<ul class="nav nav-pills" role="tablist">
+				<li role="presentation" class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+      					Dropdown <span class="caret"></span>
+    				</a>
+					<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+						<li role="presentation"><a role="menuitem" tabindex="-1" href="#">one</a></li>
+						<li role="presentation"><a role="menuitem" tabindex="-1" href="#">two</a></li>
+						<li role="presentation" class="disabled"><a role="menuitem" tabindex="-1" href="#">three</a></li>
+						<li role="presentation" class="divider"></li>
+						<li role="presentation"><a role="menuitem" tabindex="-1" href="#">four</a></li>
+					</ul>
+				</li>
 				<li role="presentation"><a href="#profile" role="tab"
 					data-toggle="tab">Profile</a></li>
 				<li role="presentation"><a href="#messages" role="tab"
@@ -56,7 +66,6 @@
 					data-toggle="tab">Settings</a></li>
 			</ul>
 	
-			<!-- Tab panes -->
 			<div class="tab-content">
 				<div role="tabpanel" class="tab-pane active" id="home">home</div>
 				<div role="tabpanel" class="tab-pane" id="profile">profile</div>
@@ -65,6 +74,13 @@
 			</div>
 		</div>		
 		<br>
+	
+		
+		<div class="btn-group">
+		<button type="button" class="btn btn-default">left</button>
+		<button type="button" class="btn btn-default">middle</button>
+		<button type="button" class="btn btn-default">right</button>
+		</div>
 	
 	
 	
