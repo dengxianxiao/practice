@@ -7,68 +7,52 @@
 <title>title</title>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/bootstrap3/css/bootstrap.min.css">
 <style type="text/css">
-	.wrapper {
-  .make-row();
-}
-.content-main {
-  .make-lg-column(8);
-}
-.content-secondary {
-  .make-lg-column(3);
-  .make-lg-column-offset(1);
-}
 
 
 	
 </style>
+<script type="text/javascript">
+/*
+	window.onload = function() {
+		var oTab = document.getElementById("tab");
+		var aH3 = oTab.getElementByTagName("h3");
+		var aDiv = oTab.getElementByTagName("div");
+		for (var i = 0; i < aH3.length; i++) {
+			aH3[i].className = "";
+			aDiv[i].style.display = "none";
+		}
+		this.className = "active";
+		aDiv[this.index].style.display = "block";
+	}
+*/
+</script>
 </head>
 <body>
 
 <nav class="navbar navbar-default" role="navigation">
-	<div class="container-fluid">
+	<div class="container">
 		<div class="navbar-header">
-			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-				
-			</button>
+			<a class="navbar-brand" href="#">Home</a>
 		</div>
-	
+
+		<ul class="nav navbar-nav navbar-right" role="navigation">
+			<li role="presentation"><a href="#profile" role="tab"
+				data-toggle="tab">About</a></li>
+			<li role="presentation"><a href="#messages" role="tab"
+				data-toggle="tab">Hobby</a></li>
+			<li role="presentation"><a href="#settings" role="tab"
+				data-toggle="tab">Contact</a></li>
+		</ul>
 	</div>
 </nav>
 
+
+
 <div class="contain-fluid">
 
-	
-
-
-
-
-
-	
 		<div class="col-md-4">
-			<ul class="nav nav-pills" role="tablist">
-				<li role="presentation" class="dropdown">
-					<a class="dropdown-toggle" data-toggle="dropdown" href="#">
-      					Dropdown <span class="caret"></span>
-    				</a>
-					<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-						<li role="presentation"><a role="menuitem" tabindex="-1" href="#">one</a></li>
-						<li role="presentation"><a role="menuitem" tabindex="-1" href="#">two</a></li>
-						<li role="presentation" class="disabled"><a role="menuitem" tabindex="-1" href="#">three</a></li>
-						<li role="presentation" class="divider"></li>
-						<li role="presentation"><a role="menuitem" tabindex="-1" href="#">four</a></li>
-					</ul>
-				</li>
-				<li role="presentation"><a href="#profile" role="tab"
-					data-toggle="tab">Profile</a></li>
-				<li role="presentation"><a href="#messages" role="tab"
-					data-toggle="tab">Messages</a></li>
-				<li role="presentation"><a href="#settings" role="tab"
-					data-toggle="tab">Settings</a></li>
-			</ul>
-	
 			<div class="tab-content">
-				<div role="tabpanel" class="tab-pane active" id="home">home</div>
-				<div role="tabpanel" class="tab-pane" id="profile">profile</div>
+<!-- 				<div role="tabpanel" class="tab-pane" id="profile">profile</div> -->
 				<div role="tabpanel" class="tab-pane" id="messages">messages</div>
 				<div role="tabpanel" class="tab-pane" id="settings">settings</div>
 			</div>
@@ -84,8 +68,6 @@
 	
 	
 	
-	
-		
 	<form action="#" role="form" class="form-horizontal">
 	<fieldset >
 		<div class="form-group has-success has-feedback">
@@ -183,7 +165,7 @@
 			</div>
 			<button type="submit" class="btn btn-default">Sign in</button>
 		</form>
-		
+	</div>	
 </div>
 
 		
